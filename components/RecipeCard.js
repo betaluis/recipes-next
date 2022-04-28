@@ -3,14 +3,17 @@ import Image from "next/image";
 
 export default function RecipeCard({ recipe }) {
     const { title, slug, cookingTime, thumbnail } = recipe.fields;
+    console.log(recipe)
     return (
         <div className="card">
             <div className="featured">
-                <Image 
-                    src={`https:${thumbnail.fields.file.url}`}
-                    width={thumbnail.fields.file.details.image.width}
-                    height={thumbnail.fields.file.details.image.height}
-                />
+                <div className="thumbnail">
+                    <Image 
+                        src={`https:${thumbnail.fields.file.url}`}
+                        objectFit="cover"
+                        layout="fill"
+                    />
+                </div>
             </div>
             <div className="content">
                 <div className="info">
@@ -59,6 +62,16 @@ export default function RecipeCard({ recipe }) {
                     padding: 16px 24px;
                     text-decoration: none;
                     transition: all 200ms ease-in-out;
+                }
+                .thumbnail {
+                    position: relative;
+                    height: 500px;
+                    overflow: hidden;
+                }
+                @media screen and (max-height: 600px) {
+                    .thumbnail {
+                        height: 300px;
+                    }
                 }
             `}</style>
         </div>

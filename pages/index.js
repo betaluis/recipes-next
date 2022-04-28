@@ -31,8 +31,18 @@ export default function Recipes({ recipes }) {
       {`
         .recipe-list {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1rem;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 2rem;
+        }
+        @media screen and (max-width: 1100px) {
+          .recipe-list {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+        @media screen and (max-width: 600px) {
+          .recipe-list {
+            grid-template-columns: 1fr;
+          }
         }
       `}
       </style>
