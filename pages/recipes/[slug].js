@@ -32,7 +32,9 @@ export async function getStaticProps({ params }) {
     "fields.slug": params.slug
   })
   return {
-    props: { recipe: items[0] }
+    props: { recipe: items[0] },
+    revalidate: 1, 
+    // We set this to be a number that represents seconds. If you put 10 it says that Next.js at most can check for updates after a 10 second stage.
   }
 }
 
