@@ -10,7 +10,7 @@ You can manually add it by pushing to repository.
  - There is no change on first visit after the content is changed.
  - The page visit triggers Next.js to re-fetch the page data in the background.
  - The static page is regenerated ready for the next visit.
-
+ - It only regenrates pages that already exists; does not create new ones.
 
 ### Go to [slug].js and index.js
 
